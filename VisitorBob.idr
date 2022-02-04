@@ -2,6 +2,7 @@
 module VisitorBob
 import OOP.VisitorPattern
 
+import Control.Monad.ST
 import Control.Monad.State
 import Data.IORef
 import Data.List
@@ -272,20 +273,20 @@ namespace ReportGenerator
             _ => False
 
       export
-      testVisitorCoverage: IO Bool
-      testVisitorCoverage = do
-         p1Found <- newIORef False
-         p2Found <- newIORef False
-         bFound  <- newIORef False
+      testVisitorCoverage: Bool
+      testVisitorCoverage = runST$ do
+         p1Found <- newSTRef False
+         p2Found <- newSTRef False
+         bFound  <- newSTRef False
          let b = (add p2 . add p1) a
          b.visit$ \case
             (Piece ** p) =>
-               if      p == p1 then writeIORef p1Found True
-               else if p == p2 then writeIORef p2Found True
+               if      p == p1 then writeSTRef p1Found True
+               else if p == p2 then writeSTRef p2Found True
                else pure ()
-            (Assembly ** assy) => when( assy.partNumber == "5879" )$ writeIORef bFound True
+            (Assembly ** assy) => when( assy.partNumber == "5879" )$ writeSTRef bFound True
             _ => pure ()
-         assertSequence [readIORef p1Found, readIORef p2Found, readIORef bFound]
+         assertSequence [readSTRef p1Found, readSTRef p2Found, readSTRef bFound]
 
       private
       cellphone: Part Assembly
