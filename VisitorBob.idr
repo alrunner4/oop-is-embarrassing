@@ -1,5 +1,5 @@
 ||| https://web.archive.org/web/20151022084246/http://objectmentor.com/resources/articles/visitor.pdf
-module OOPIsEmbarrassing.VisitorBob
+module VisitorBob
 import OOP.VisitorPattern
 
 import Control.Monad.State

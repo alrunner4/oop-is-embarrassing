@@ -13,11 +13,23 @@ The title is directly inspired By Brian Will's provocative monologue of the same
 This project seeks realistic engineering problems rather than simply toys, though the scope is
 focused on proving system design rather than implementation in complete detail.
 
+
 ## Explore
+
+### Visitor Pattern
 ```bash
 idris2 --repl VisitorBob.ipkg
 ```
 ```
-:module OOPIsEmbarrassing.VisitorBob
-:browse OOPIsEmbarrassing.VisitorBob
+:module VisitorBob
+:browse VisitorBob
+```
+
+### Homogenizing Heterogeneous Collections
+```bash
+idris2 --repl RustDynTrait.idr
+```
+```
+:module RustDynTrait
+:browse RustDynTrait
 ```
