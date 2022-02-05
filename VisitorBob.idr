@@ -257,8 +257,8 @@ namespace ReportGenerator
       testAssembly: Bool
       testAssembly = let
          b = (add p2 . add p1) a
-         in case map unvisitable b.parts of
-            [(Piece ** p1g), (Piece ** p2g)] => p1g == p1 && p2g == p2
+         in case b.parts of
+            [(Piece ** (p1g,_)), (Piece ** (p2g,_))] => p1g == p1 && p2g == p2
             _ => False
 
       export
@@ -266,8 +266,8 @@ namespace ReportGenerator
       testAssemblyOfAssemblies = let
          subAssembly = add p1 $PartDetails "1324" "SubAssembly" $MkAssembly []
          b = add subAssembly a
-         in case map unvisitable b.parts of
-            [(Assembly ** i)] => i.partNumber == "1234" &&
+         in case b.parts of
+            [(Assembly ** (i,_))] => i.partNumber == "1234" &&
                                  i.description == "SubAssembly" &&
                                  null i.parts
             _ => False
