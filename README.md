@@ -14,6 +14,10 @@ This project seeks realistic engineering problems rather than simply toys, thoug
 focused on proving system design rather than implementation in complete detail.
 
 
+## Dependencies
+
+* idris2 --install [oop](https://github.com/alrunner4/idris2-oop).ipkg
+
 ## Explore
 
 ### Visitor Pattern
