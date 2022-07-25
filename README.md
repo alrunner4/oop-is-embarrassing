@@ -26,6 +26,20 @@ organized literately besides.
 ### Visitor Pattern
 VisitorBob.idr follows the same ordering as the [chapter linked at the top of the module source](
 https://web.archive.org/web/20151022084246/http://objectmentor.com/resources/articles/visitor.pdf).
+My focus with this contrasting implementation is in demonstrating that nothing about the Visitor
+pattern is inherently related to inheritance, and that especially in simple cases the use of
+inheritance is merely a convoluted encoding of sum types. This doesn't include specific contrasts
+with the many flavors of "visitation" recognized in pure functional languages such as the
+distinction between Foldable and Traversable, though I did provide some new formalisms in the
+[oop](https://github.com/alrunner4/idris2-oop) package to take issue with the common notion that
+these patterns can't be codified into libraries.
+
+Some of the improvement I consider to be the aesthetic difference between the Java-like languages
+and Idris' hewing to more modern sensibilities around removing line noise punctuation, but I also
+think that stripping-away of superfluity is part of what enables the simpler solution to be seen:
+when you have a closed set of implementations, a sum type is simpler than twisting yourself into a
+double dispatch mechanism just to avoid the syntax for checking the cases of an enumeration.
+
 ```bash
 idris2 --repl VisitorBob.ipkg
 ```
