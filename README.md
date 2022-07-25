@@ -55,9 +55,20 @@ idris2 --repl VisitorBob.ipkg
 
 ### Homogenizing Heterogeneous Collections
 ```bash
-idris2 --repl RustDynTrait.idr
+idris2 RustDynTrait.idr
 ```
 ```
-:module RustDynTrait
 :browse RustDynTrait
 ```
+
+### Template Method
+
+```bash
+idris2 TemplateMethod.idr
+```
+```
+:browse TemplateMethod
+```
+This example is another included to demonstrate that these patterns that are commonly presented in
+object-oriented design contexts as hinging on inheritance are again simpler without, so long as your
+language is smart enough to support closures.
