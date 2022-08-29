@@ -61,7 +61,36 @@ idris2 RustDynTrait.idr
 :browse RustDynTrait
 ```
 
+### Specification
+From [Wikipedia](https://en.wikipedia.org/wiki/Specification_pattern):
+> A specification pattern outlines a business rule that is combinable with other business rules.
+
+Wikipedia gives a simple boolean predicate combinator example, the domain logic for which is again
+largely obscured by inheritance schemes. The listed examples clock in with the following
+non-punctuation line counts:
+
+* C#: 57 source lines
+* C# 6.0 with generics: 49 source lines
+* Python: 34 source lines
+* C++: 86 source lines
+* TypeScript: 44 source lines
+
+In contrast, the Idris implementation achieves all the same in _12 source lines_. Much of the time I
+find my Idris code tending toward a higher token-per-line ratio than in the C family of languages,
+but in this case, I think both reduced line count and line width in this sample dramatically
+increase comprehensibility of the domain encoding.
+
+```bash
+idris2 SpecificationPattern.idr
+```
+```
+:browse SpecificationPattern
+```
+
 ### Template Method
+This example is another included to demonstrate that these patterns that are commonly presented in
+object-oriented design contexts as hinging on inheritance are again simpler without, so long as your
+language is smart enough to support closures.
 
 ```bash
 idris2 TemplateMethod.idr
@@ -69,6 +98,3 @@ idris2 TemplateMethod.idr
 ```
 :browse TemplateMethod
 ```
-This example is another included to demonstrate that these patterns that are commonly presented in
-object-oriented design contexts as hinging on inheritance are again simpler without, so long as your
-language is smart enough to support closures.
