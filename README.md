@@ -24,7 +24,8 @@ In general, `:doc` and `:printdef` will get you pretty far, though I try to keep
 organized literately besides.
 
 ### Visitor Pattern
-VisitorBob.idr follows the same ordering as the [chapter linked at the top of the module source](
+[VisitorBob.idr](VisitorBob.idr) follows the same ordering as the
+[chapter linked at the top of the module source](
 https://web.archive.org/web/20151022084246/http://objectmentor.com/resources/articles/visitor.pdf).
 My focus with this contrasting implementation is in demonstrating that nothing about the Visitor
 pattern is inherently related to inheritance, and that especially in simple cases the use of
@@ -61,7 +62,7 @@ idris2 RustDynTrait.idr
 :browse RustDynTrait
 ```
 
-### Specification
+### Specification Pattern
 From [Wikipedia](https://en.wikipedia.org/wiki/Specification_pattern):
 > A specification pattern outlines a business rule that is combinable with other business rules.
 
@@ -75,10 +76,10 @@ non-punctuation line counts:
 * C++: 86 source lines
 * TypeScript: 44 source lines
 
-In contrast, the Idris implementation achieves all the same in _12 source lines_. Much of the time I
-find my Idris code tending toward a higher token-per-line ratio than in the C family of languages,
-but in this case, I think both reduced line count and line width in this sample dramatically
-increase comprehensibility of the domain encoding.
+In contrast, the [Idris implementation](Specification.idr) achieves all the same in _12 source
+lines_. Much of the time I find my Idris code tending toward a higher token-per-line ratio than in
+languages with C-style syntax, but in this case, I think both reduced line count and line width in
+this sample dramatically increase comprehensibility of the domain encoding.
 
 ```bash
 idris2 SpecificationPattern.idr
@@ -88,9 +89,9 @@ idris2 SpecificationPattern.idr
 ```
 
 ### Template Method
-This example is another included to demonstrate that these patterns that are commonly presented in
-object-oriented design contexts as hinging on inheritance are again simpler without, so long as your
-language is smart enough to support closures.
+[This example](TemplateMethod.idr) is another included to demonstrate that these patterns that are
+commonly presented in object-oriented design contexts as hinging on inheritance are again simpler
+without, so long as your language is smart enough to support closures.
 
 ```bash
 idris2 TemplateMethod.idr
