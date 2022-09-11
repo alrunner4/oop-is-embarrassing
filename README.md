@@ -76,10 +76,10 @@ non-punctuation line counts:
 * C++: 86 source lines
 * TypeScript: 44 source lines
 
-In contrast, the [Idris implementation](Specification.idr) achieves all the same in _12 source
-lines_. Much of the time I find my Idris code tending toward a higher token-per-line ratio than in
-languages with C-style syntax, but in this case, I think both reduced line count and line width in
-this sample dramatically increase comprehensibility of the domain encoding.
+In contrast, the [Idris implementation](SpecificationPattern.idr) achieves all the same in _12
+source lines_. Much of the time I find my Idris code tending toward a higher token-per-line ratio
+than in languages with C-style syntax, but in this case, I think both reduced line count and line
+width in this sample dramatically increase comprehensibility of the domain encoding.
 
 ```bash
 idris2 SpecificationPattern.idr
