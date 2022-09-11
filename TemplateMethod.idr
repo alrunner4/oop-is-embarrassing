@@ -9,8 +9,8 @@ record Game where
    endPlay:    IO ()
 
 export
-(.play): Game -> IO ()
-(.play) game = game.initialize >> game.startPlay >> game.endPlay
+play: Game -> IO ()
+play game = game.initialize >> game.startPlay >> game.endPlay
 
 export
 mario: Game
@@ -27,8 +27,8 @@ tankfight = MkGame {
    endPlay    = putStr "Tankfight Game Finished!\n" }
 
 export game1, game2, game3: IO ()
-game1 = tankfight.play
-game2 = mario.play
-game3 = .play$
+game1 = play tankfight
+game2 = play mario
+game3 = play$
    { startPlay $= (>> putStr "Episode 2: The Retankfightening\n")
    } tankfight
